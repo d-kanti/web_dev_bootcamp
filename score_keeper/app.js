@@ -35,14 +35,18 @@ p2but.addEventListener("click", () => {
 });
 
 rb.addEventListener("click", () => {
+    reset();
+});
+ws.addEventListener('change',function(){
+    winnings = parseInt(this.value);
+    reset();
+});
+
+function reset(){
     p1s = 0;
     p2s = 0;
     p1ss.textContent = p1s;
     p2ss.textContent = p2s;
     gameOver = false;
-});
-ws.addEventListener('change',function(){
-    winnings = parseInt(this.value);
-    
-});
+}
 
