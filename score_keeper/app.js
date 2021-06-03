@@ -11,7 +11,7 @@ const ws = document.querySelector('#wss');
 
 let p1s = 0;
 let p2s = 0;
-let winnings = 5;
+let winnings = parseInt(ws.value);
 let gameOver = false;
 
 p1but.addEventListener("click", () => {
