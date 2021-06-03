@@ -21,59 +21,62 @@
 </head>
 <body>
 
-    <h1> <span id="p1">0</span> to <span id="p2">0</span></h1>
-
+    
     <div class="container">
         <div class="column">
             <div class="column is-half is-offset-one-quarter">
                 <div class="card">
                     <header class="card-header">
-                      <p class="card-header-title">
-                        Component
-                      </p>
-                      <button class="card-header-icon" aria-label="more options">
-                        <span class="icon">
-                          <i class="fas fa-angle-down" aria-hidden="true"></i>
-                        </span>
-                      </button>
+                        <p class="card-header-title">
+                            Score Keeper
+                        </p>
+                        <!-- <button class="card-header-icon" aria-label="more options"> -->
+                        <a href="#" class="card-footer-item" id="r">Reset</a>
+
+                            <span class="icon">
+                                <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </span>
+                        </button>
                     </header>
                     <div class="card-content">
-                      <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-                        <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
-                        <br>
-                        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                      </div>
+                        <div class="content">
+                            
+                            <h1> <span id="p1">0</span> to <span id="p2">0</span></h1>
+                            
+                            <br>
+
+                            <select name="" id="wss">
+       
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                            </select>
+                            <!-- <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time> -->
+                        </div>
                     </div>
                     <footer class="card-footer">
-                      <a href="#" class="card-footer-item">Save</a>
-                      <a href="#" class="card-footer-item">Edit</a>
-                      <a href="#" class="card-footer-item">Delete</a>
+                        <a href="#" class="card-footer-item" id='p1b'>1 Player One</a>
+                        <a href="#" class="card-footer-item" id="p2b">+1 Player Two</a>
                     </footer>
-                  </div>
+                </div>
             </div>
         </div>
     </div>
-
-
-    <select name="" id="wss">
-       
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-        <option value="12">12</option>
-        <option value="13">13</option>
-    </select>
     
-    <button id="p1b">+1 Player One</button>
-    <button id="p2b">+1 Player Two</button>
-    <button id="r">Reset</button>
+    
+ 
+    
+    <!-- <button id="p1b">+</button> -->
+    <button id="p2b"></button>
+    <button id="r"></button>
 
 
     <script src="app.js"></script>
