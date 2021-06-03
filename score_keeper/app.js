@@ -5,6 +5,9 @@ const p2but = document.querySelector("#p2b");
 const p1ss = document.querySelector("#p1");
 const p2ss = document.querySelector("#p2");
 const rb = document.querySelector("#r");
+const ws = document.querySelector('#wss');
+
+
 
 let p1s = 0;
 let p2s = 0;
@@ -38,3 +41,8 @@ rb.addEventListener("click", () => {
     p2ss.textContent = p2s;
     gameOver = false;
 });
+ws.addEventListener('change',function(){
+    winnings = parseInt(this.value);
+    
+});
+
