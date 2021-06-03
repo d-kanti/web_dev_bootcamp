@@ -53,5 +53,7 @@ function reset() {
     p1ss.textContent = p1s;
     p2ss.textContent = p2s;
     gameOver = false;
+    p1ss.classList.remove('win', 'loos');
+    p2ss.classList.remove('win', 'loos');
 }
 
