@@ -19,6 +19,8 @@ p1but.addEventListener("click", () => {
         p1s += 1;
         if (p1s === winnings) {
             gameOver = true;
+            p1ss.classList.add('win');
+            p2ss.classList.add('loos');
         }
         p1ss.textContent = p1s;
     }
@@ -29,6 +31,9 @@ p2but.addEventListener("click", () => {
         p2s += 1;
         if (p2s === winnings) {
             gameOver = true;
+            p2ss.classList.add('win');
+            p1ss.classList.add('loos');
+
         }
         p2ss.textContent = p2s;
     }
@@ -37,12 +42,12 @@ p2but.addEventListener("click", () => {
 rb.addEventListener("click", () => {
     reset();
 });
-ws.addEventListener('change',function(){
+ws.addEventListener('change', function () {
     winnings = parseInt(this.value);
     reset();
 });
 
-function reset(){
+function reset() {
     p1s = 0;
     p2s = 0;
     p1ss.textContent = p1s;
