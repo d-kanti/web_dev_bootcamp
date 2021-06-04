@@ -21,6 +21,7 @@ p1but.addEventListener("click", () => {
             gameOver = true;
             p1ss.classList.add('has-text-success');
             p2ss.classList.add('has-text-danger');
+            
         }
         p1ss.textContent = p1s;
     }
