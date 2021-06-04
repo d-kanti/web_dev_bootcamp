@@ -19,8 +19,8 @@ p1but.addEventListener("click", () => {
         p1s += 1;
         if (p1s === winnings) {
             gameOver = true;
-            p1ss.classList.add('win');
-            p2ss.classList.add('loos');
+            p1ss.classList.add('has-text-success');
+            p2ss.classList.add('has-text-danger');
         }
         p1ss.textContent = p1s;
     }
@@ -31,8 +31,8 @@ p2but.addEventListener("click", () => {
         p2s += 1;
         if (p2s === winnings) {
             gameOver = true;
-            p2ss.classList.add('win');
-            p1ss.classList.add('loos');
+            p2ss.classList.add('has-text-success');
+            p1ss.classList.add('has-text-danger');
 
         }
         p2ss.textContent = p2s;
@@ -53,7 +53,7 @@ function reset() {
     p1ss.textContent = p1s;
     p2ss.textContent = p2s;
     gameOver = false;
-    p1ss.classList.remove('win', 'loos');
-    p2ss.classList.remove('win', 'loos');
+    p1ss.classList.remove('has-text-success', 'has-text-danger');
+    p2ss.classList.remove('has-text-success', 'has-text-danger');
 }
 
