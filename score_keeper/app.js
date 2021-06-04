@@ -27,18 +27,40 @@ let p2s = 0;
 let winnings = parseInt(ws.value);
 let gameOver = false;
 
-p1but.addEventListener("click", () => {
+function upadte(current, oponent){
     if (!gameOver) {
-        p1s += 1;
-        if (p1s === winnings) {
+        current.score += 1;
+        if (current.score === winnings) {
             gameOver = true;
-            p1ss.classList.add('has-text-success');
-            p2ss.classList.add('has-text-danger');
-            p1but.disabled = true;
-            p2but.disabled = true;
+            current.display.classList.add('has-text-success');
+            oponent.display.classList.add('has-text-danger');
+            current.button.disabled = true;
+            oponent.button.disabled = true;
         }
-        p1ss.textContent = p1s;
+        current.display.textContent = current.score;
     }
+
+
+}
+
+
+
+
+p1but.addEventListener("click", () => {
+    // if (!gameOver) {
+    //     p1s += 1;
+    //     if (p1s === winnings) {
+    //         gameOver = true;
+    //         p1ss.classList.add('has-text-success');
+    //         p2ss.classList.add('has-text-danger');
+    //         p1but.disabled = true;
+    //         p2but.disabled = true;
+    //     }
+    //     p1ss.textContent = p1s;
+    // }
+
+    upadte(p1o,p2o);
+
 });
 
 p2but.addEventListener("click", () => {
