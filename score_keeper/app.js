@@ -21,7 +21,8 @@ p1but.addEventListener("click", () => {
             gameOver = true;
             p1ss.classList.add('has-text-success');
             p2ss.classList.add('has-text-danger');
-            
+            p1but.disabled = true;
+            p2but.disabled = true;
         }
         p1ss.textContent = p1s;
     }
@@ -34,6 +35,8 @@ p2but.addEventListener("click", () => {
             gameOver = true;
             p2ss.classList.add('has-text-success');
             p1ss.classList.add('has-text-danger');
+            p1but.disabled = true;
+            p2but.disabled = true;
 
         }
         p2ss.textContent = p2s;
@@ -56,5 +59,9 @@ function reset() {
     gameOver = false;
     p1ss.classList.remove('has-text-success', 'has-text-danger');
     p2ss.classList.remove('has-text-success', 'has-text-danger');
+
+    p1but.disabled = false;
+    p2but.disabled = false;
+
 }
 
