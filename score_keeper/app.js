@@ -34,7 +34,7 @@ function upadte(current, oponent){
     
 }
 function reset(num = ws.value) {
-    
+
     for (let {score, button, display} of [p1o,p2o]){
         score = 0;
         display.textContent = score;
@@ -46,21 +46,10 @@ function reset(num = ws.value) {
     winnings = parseInt(num);
 }
 
+p1o.button.addEventListener("click", () => upadte(p1o,p2o));
 
+p2o.button.addEventListener("click", () => upadte(p2o,p1o));
 
-p1o.button.addEventListener("click", () => {
-    upadte(p1o,p2o);
-});
+rb.addEventListener("click", () => reset());
 
-p2o.button.addEventListener("click", () => {
-    upadte(p2o,p1o);
-});
-
-rb.addEventListener("click", () => {
-    reset();
-});
-ws.addEventListener('change', function () {
-    reset();
-});
-
-
+ws.addEventListener('change', () =>reset());
