@@ -5,15 +5,14 @@ const p1o = {
     button: document.querySelector("#p1b"),
     display: document.querySelector("#p1")
 };
-
 const p2o = {
     score:0 ,
     button: document.querySelector("#p2b"),
     display: document.querySelector("#p2")
 };
-
 const rb = document.querySelector("#r");
 const ws = document.querySelector('#wss');
+
 let winnings;
 let gameOver;
 reset()
@@ -31,10 +30,23 @@ function upadte(current, oponent){
         }
         current.display.textContent = current.score;
     }
-
-
+    
+    
 }
+function reset(num = ws.value) {
+    p1o.score = 0;
+    p1o.display.textContent = p1o.score;
+    p1o.display.classList.remove('has-text-success', 'has-text-danger');
+    p1o.button.disabled = false;
+    
+    p2o.score = 0;
+    p2o.display.textContent = p2o.score;
+    p2o.display.classList.remove('has-text-success', 'has-text-danger');
+    p2o.button.disabled = false;
 
+    gameOver = false;
+    winnings = parseInt(num);
+}
 
 
 
@@ -50,22 +62,7 @@ rb.addEventListener("click", () => {
     reset();
 });
 ws.addEventListener('change', function () {
-    // winnings = parseInt(this.value);
     reset();
 });
 
-function reset(num = ws.value) {
-    p1o.score = 0;
-    p1o.display.textContent = p1o.score;
-    p1o.display.classList.remove('has-text-success', 'has-text-danger');
-    p1o.button.disabled = false;
-    
-    p2o.score = 0;
-    p2o.display.textContent = p2o.score;
-    p2o.display.classList.remove('has-text-success', 'has-text-danger');
-    p2o.button.disabled = false;
-
-    gameOver = false;
-    winnings = parseInt(num);
-}
 
