@@ -47,49 +47,23 @@ function upadte(current, oponent){
 
 
 p1but.addEventListener("click", () => {
-    // if (!gameOver) {
-    //     p1s += 1;
-    //     if (p1s === winnings) {
-    //         gameOver = true;
-    //         p1ss.classList.add('has-text-success');
-    //         p2ss.classList.add('has-text-danger');
-    //         p1but.disabled = true;
-    //         p2but.disabled = true;
-    //     }
-    //     p1ss.textContent = p1s;
-    // }
-
     upadte(p1o,p2o);
-
 });
 
 p2but.addEventListener("click", () => {
-    // if (!gameOver) {
-    //     p2s += 1;
-    //     if (p2s === winnings) {
-    //         gameOver = true;
-    //         p2ss.classList.add('has-text-success');
-    //         p1ss.classList.add('has-text-danger');
-    //         p1but.disabled = true;
-    //         p2but.disabled = true;
-
-    //     }
-    //     p2ss.textContent = p2s;
-    // }
-
     upadte(p2o,p1o);
-
 });
 
 rb.addEventListener("click", () => {
     reset();
 });
 ws.addEventListener('change', function () {
-    winnings = parseInt(this.value);
+    // winnings = parseInt(this.value);
     reset();
 });
 
-function reset() {
+function reset(num = ws.value) {
+    
     p1o.score = 0;
     p2o.score = 0;
     p1o.display.textContent = p1o.score;
@@ -100,6 +74,8 @@ function reset() {
 
     p1o.button.disabled = false;
     p2o.button.disabled = false;
+
+    winnings = parseInt(num);
 
 }
 
