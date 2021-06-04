@@ -90,16 +90,16 @@ ws.addEventListener('change', function () {
 });
 
 function reset() {
-    p1s = 0;
-    p2s = 0;
-    p1ss.textContent = p1s;
-    p2ss.textContent = p2s;
+    p1o.score = 0;
+    p2o.score = 0;
+    p1o.display.textContent = p1o.score;
+    p2o.display.textContent = p2o.score;
     gameOver = false;
-    p1ss.classList.remove('has-text-success', 'has-text-danger');
-    p2ss.classList.remove('has-text-success', 'has-text-danger');
+    p1o.display.classList.remove('has-text-success', 'has-text-danger');
+    p2o.display.classList.remove('has-text-success', 'has-text-danger');
 
-    p1but.disabled = false;
-    p2but.disabled = false;
+    p1o.button.disabled = false;
+    p2o.button.disabled = false;
 
 }
 
