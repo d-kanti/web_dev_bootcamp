@@ -1,5 +1,18 @@
 console.log("connected");
 
+const p1o = {
+    score:0 ,
+    button: document.querySelector("#p1b"),
+    display: document.querySelector("#p1")
+};
+
+const p2o = {
+    score:0 ,
+    button: document.querySelector("#p2b"),
+    display: document.querySelector("#p2")
+};
+
+
 const p1but = document.querySelector("#p1b");
 const p2but = document.querySelector("#p2b");
 const p1ss = document.querySelector("#p1");
