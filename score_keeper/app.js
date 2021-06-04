@@ -34,15 +34,23 @@ function upadte(current, oponent){
     
 }
 function reset(num = ws.value) {
-    p1o.score = 0;
-    p1o.display.textContent = p1o.score;
-    p1o.display.classList.remove('has-text-success', 'has-text-danger');
-    p1o.button.disabled = false;
+
+    for (let {score, button, display} of [p1o,p2o]){
+        score = 0;
+        display.textContent = score;
+        display.classList.remove('has-text-success', 'has-text-danger');
+        button.disabled = false;
+    }
+
+    // p1o.score = 0;
+    // p1o.display.textContent = p1o.score;
+    // p1o.display.classList.remove('has-text-success', 'has-text-danger');
+    // p1o.button.disabled = false;
     
-    p2o.score = 0;
-    p2o.display.textContent = p2o.score;
-    p2o.display.classList.remove('has-text-success', 'has-text-danger');
-    p2o.button.disabled = false;
+    // p2o.score = 0;
+    // p2o.display.textContent = p2o.score;
+    // p2o.display.classList.remove('has-text-success', 'has-text-danger');
+    // p2o.button.disabled = false;
 
     gameOver = false;
     winnings = parseInt(num);
