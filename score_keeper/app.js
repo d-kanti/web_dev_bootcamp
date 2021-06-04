@@ -64,18 +64,21 @@ p1but.addEventListener("click", () => {
 });
 
 p2but.addEventListener("click", () => {
-    if (!gameOver) {
-        p2s += 1;
-        if (p2s === winnings) {
-            gameOver = true;
-            p2ss.classList.add('has-text-success');
-            p1ss.classList.add('has-text-danger');
-            p1but.disabled = true;
-            p2but.disabled = true;
+    // if (!gameOver) {
+    //     p2s += 1;
+    //     if (p2s === winnings) {
+    //         gameOver = true;
+    //         p2ss.classList.add('has-text-success');
+    //         p1ss.classList.add('has-text-danger');
+    //         p1but.disabled = true;
+    //         p2but.disabled = true;
 
-        }
-        p2ss.textContent = p2s;
-    }
+    //     }
+    //     p2ss.textContent = p2s;
+    // }
+
+    upadte(p2o,p1o);
+
 });
 
 rb.addEventListener("click", () => {
