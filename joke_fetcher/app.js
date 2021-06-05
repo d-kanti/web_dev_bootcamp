@@ -20,6 +20,9 @@ but.addEventListener('click',async ()=>{
     const newLI = document.createElement('LI');
     newLI.append(joke);
     jokes.append(newLI);
+    let lis = document.querySelectorAll('li')
+    lis[lis.length-1].style.padding = '10px';
+
 }) 
 
 
