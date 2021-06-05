@@ -3,9 +3,13 @@ const liss = document.getElementById('jokes');
 
 
 const getJoke = async () => {
-    const header = {headers: { Accept : 'application/json'}};
-    const res = await axios.get('https://icanhazdadjoke.com',header);
-    return (res.data.joke);
+    try{
+        const header = {headers: { Accept : 'application/json'}};
+        const res = await axios.get('https://icanhazdadjoke.com',header);
+        return (res.data.joke);
+    } catch {
+        return "something went wrong, please try again please..."
+    }
 
 
 }
