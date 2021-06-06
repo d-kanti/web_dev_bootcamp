@@ -1,6 +1,8 @@
 const form = document.querySelector("#form_s");
-form.addEventListener('submit',(e)=>{
+form.addEventListener('submit',async (e)=>{
     e.preventDefault();
     console.log("submitted");
-    console.log("submitted value is:",form.elements.q.value);
+    const Search_string = form.elements.q.value;
+    const res = await axios.get(`http://api.tvmaze.com/search/shows?q=${Search_string}`)
+    console.log(res.data[0].show.image.medium);
 });
