@@ -36,6 +36,8 @@ function upadte(current, oponent){
 function reset(num = ws.value) {
 
     for (let {score, button, display} of [p1o,p2o]){
+        p1o.score = 0;
+        p2o.score = 0;
         score = 0;
         display.textContent = score;
         display.classList.remove('has-text-success', 'has-text-danger');
