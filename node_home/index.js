@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 
 app.get("/app/:id", (req, res) => {
   let { id } = req.params;
-  res.render(id);
+  res.render(path.join('app',id));
 });
 
 app.listen(3000, () => {
