@@ -1,0 +1,23 @@
+body{
+    color:#fff
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #333;
+    color: wheat;
+    font-weight: 600;
+    
+  }
+  li{
+      font-family: monospace;
+      font-size:200%
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: wheat;
+    color: black;
+  }
+}
