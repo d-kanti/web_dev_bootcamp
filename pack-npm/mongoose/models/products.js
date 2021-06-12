@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 
 const productSchema = new mongoose.Schema({
-  type: { type: String, required: true },
+  name: { type: String, required: true },
   price: { type: Number, required: true, min: 0 },
-  catagory: { type: String, enum: ["fruit", "vegetable", "dairy"] }
+  catagory: { type: String,lowercase:true, enum: ["fruit", "vegetable", "dairy"] }
 });
 
 const Product = mongoose.model('Product', productSchema);

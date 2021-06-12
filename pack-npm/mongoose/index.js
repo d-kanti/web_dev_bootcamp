@@ -1,6 +1,15 @@
+const express = require('express');
+const app = express();
+const path = require('path');
 const mongoose = require("mongoose");
+
+app.set('views', path.join(__dirname,'views'));
+app.set('view engine','ejs');
+
+const Product = require('./models/products');
+
 mongoose
-  .connect("mongodb://localhost:27017/test", {
+  .connect("mongodb://localhost:27017/farmStand", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
