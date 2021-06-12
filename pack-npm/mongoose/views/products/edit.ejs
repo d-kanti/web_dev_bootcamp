@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Edit <%= product.name %> </title>
   </head>
   <body>
+    <h1>Edit Product </h1>
     <form action="/products/<%= product._id %>?_method=PUT" method="POST">
       <label for="name">Product Name</label>
       <input type="text" name="name" placeholder="Product Name" value="<%= product.name %> "/>
