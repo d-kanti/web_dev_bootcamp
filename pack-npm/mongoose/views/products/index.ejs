@@ -9,7 +9,9 @@
   <body>
     <ul>
       <% for (let i of products){ %>
-      <li><%= i.name %></li>
+      <li>
+        <a href="/products/<%= i._id %> "><%= i.name %> </a>
+      </li>
       <% } %>
     </ul>
   </body>
