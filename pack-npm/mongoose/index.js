@@ -1,10 +1,12 @@
 const express = require("express");
 const app = express();
+
 const path = require("path");
 const methodOverride = require("method-override");
 const mongoose = require("mongoose");
-const alert = require("alert");
+
 const Product = require("./models/products");
+const catagories = require("./models/catagories");
 mongoose
   .connect("mongodb://localhost:27017/farmStand", {
     useNewUrlParser: true,
@@ -24,19 +26,15 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 
-const catagories = ["fruit", "vegetable", "dairy"];
-
 app.get("/products", async (req, res) => {
   const { cata } = req.query;
   if (cata) {
-    const products = await Product.find({catagory:cata});      
-    res.render("products/index", { products , catagories, filter:cata});
-} else {
+    const products = await Product.find({ catagory: cata });
+    res.render("products/index", { products, catagories, filter: cata });
+  } else {
     const products = await Product.find({});
-    res.render("products/index", { products, catagories, filter:cata});
+    res.render("products/index", { products, catagories, filter: cata });
   }
-
-  
 });
 
 app.get("/products/new", (req, res) => {
