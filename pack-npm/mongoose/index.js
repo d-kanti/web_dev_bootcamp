@@ -1,13 +1,8 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const path = require('path');
+const path = require("path");
 const mongoose = require("mongoose");
-
-app.set('views', path.join(__dirname,'views'));
-app.set('view engine','ejs');
-
-const Product = require('./models/products');
-
+const Product = require("./models/products");
 mongoose
   .connect("mongodb://localhost:27017/farmStand", {
     useNewUrlParser: true,
@@ -21,13 +16,15 @@ mongoose
     console.log(err);
   });
 
-const movieSchema = new mongoose.Schema({
-  title: String,
-  year: Number,
-  score: Number,
-  rating: String,
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
+
+app.get("/products", async (req, res) => {
+  const products = await Product.find({});
+  console.log(products);
+    res.render('products/index',{products});
 });
 
-const Movie = mongoose.model("Movie", movieSchema);
-const amadeus = new Movie({ title: "Amadeus", year: 1834, score: 8.3, rating: "R" });
-
+app.listen(3000, () => {
+  console.log("listning on port 3000");
+});
