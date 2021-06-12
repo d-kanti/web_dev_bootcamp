@@ -1,7 +1,24 @@
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/test', {useNewUrlParser: true, useUnifiedTopology: true});
+const mongoose = require("mongoose");
+mongoose
+  .connect("mongodb://localhost:27017/test", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("Connected,,,,,,");
+  })
+  .catch((err) => {
+    console.log("an error occured");
+    console.log(err);
+  });
 
-const Cat = mongoose.model('Cat', { name: String });
+const movieSchema = new mongoose.Schema({
+  title: String,
+  year: Number,
+  score: Number,
+  rating: String,
+});
 
-const kitty = new Cat({ name: 'Zildjian' });
-kitty.save().then(() => console.log('meow'));
+const Movie = mongoose.model("Movie", movieSchema);
+const amadeus = new Movie({ title: "Amadeus", year: 1834, score: 8.3, rating: "R" });
+
