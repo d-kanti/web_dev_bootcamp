@@ -38,7 +38,8 @@ app.get("/products/:id", async (req, res) => {
 });
 
 app.post("/products",(req,res)=>{
-
+    console.log(req.body)
+    res.send('making your product');
 });
 
 app.listen(3000, () => {
