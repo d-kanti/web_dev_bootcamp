@@ -3,7 +3,7 @@ const app = express();
 const path = require("path");
 const methodOverride = require("method-override");
 const mongoose = require("mongoose");
-const alert = require('alert');
+const alert = require("alert");
 const Product = require("./models/products");
 mongoose
   .connect("mongodb://localhost:27017/farmStand", {
@@ -27,9 +27,16 @@ app.use(methodOverride("_method"));
 const catagories = ["fruit", "vegetable", "dairy"];
 
 app.get("/products", async (req, res) => {
-  const products = await Product.find({});
-  console.log(products);
-  res.render("products/index", { products });
+  const { cata } = req.query;
+  if (cata) {
+    const products = await Product.find({catagory:cata});      
+    res.render("products/index", { products , catagories, filter:cata});
+} else {
+    const products = await Product.find({});
+    res.render("products/index", { products, catagories, filter:cata});
+  }
+
+  
 });
 
 app.get("/products/new", (req, res) => {
@@ -71,7 +78,7 @@ app.put("/products/:id", async (req, res) => {
 app.delete("/products/:id", async (req, res) => {
   const { id } = req.params;
   await Product.findByIdAndDelete(id);
-  alert('DELETED')
+  alert("DELETED");
   res.redirect("/products");
 });
 
