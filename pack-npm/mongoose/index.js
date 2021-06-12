@@ -18,6 +18,7 @@ mongoose
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
+app.use(express.urlencoded({extended:true}));
 
 app.get("/products", async (req, res) => {
   const products = await Product.find({});
@@ -36,7 +37,9 @@ app.get("/products/:id", async (req, res) => {
   res.render("products/show", { product });
 });
 
-app.post("/products");
+app.post("/products",(req,res)=>{
+
+});
 
 app.listen(3000, () => {
   console.log("listning on port 3000");
