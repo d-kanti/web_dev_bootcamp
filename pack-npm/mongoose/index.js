@@ -24,7 +24,7 @@ app.get("/products", async (req, res) => {
   const products = await Product.find({});
   console.log(products);
   res.render("products/index", { products });
-});
+}); 
 
 app.get("/products/new", (req, res) => {
   res.render("products/new");
@@ -37,10 +37,17 @@ app.get("/products/:id", async (req, res) => {
   res.render("products/show", { product });
 });
 
-app.post("/products", (req, res) => {
-  console.log(req.body);
-  res.send("making your product");
+app.post("/products", async (req, res) => {
+  const newProduct = new Product(req.body);
+  await newProduct.save();
+  console.log(newProduct);
+  res.redirect(`/products/${newProduct._id}`);
 });
+
+
+
+
+
 
 app.listen(3000, () => {
   console.log("listning on port 3000");
