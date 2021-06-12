@@ -29,7 +29,7 @@
       <label for="catagory">Catagory</label>
       <select name="catagory">
 
-        <% for (let i of ["fruit","vegetable","dairy"]){ %>
+        <% for (let i of catagories){ %>
           <option value= <%= i %> <%= product.catagory === i ? 'selected' : '' %> ><%= i.charAt(0).toUpperCase() + i.slice(1)%> </option>
         <% } %> 
 

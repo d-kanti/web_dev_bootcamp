@@ -17,11 +17,13 @@
 
       <label for="catagory">Catagory</label>
       <select name="catagory">
-        <option value="fruit">Fruit</option>
-        <option value="vegetable">Vegetables</option>
-        <option value="dairy">Dairy</option>
+        <% for (let i of catagories){ %>
+          <option value= <%= i %> ><%= i.charAt(0).toUpperCase() + i.slice(1)%> </option>
+        <% } %> 
       </select>
       <button>Add</button>
     </form>
+<a href="/products">Cancel</a>
+
   </body>
 </html>
