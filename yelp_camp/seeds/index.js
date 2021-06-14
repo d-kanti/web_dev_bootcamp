@@ -24,10 +24,10 @@ const seedDB = async () => {
     const camp = new Campground({
       location: `${cities[random1000].city},${cities[random1000].state}`,
       title: `${sample(descriptors)} ${sample(places)}`,
-      image: "https://source.unsplash.com/collections/483251",
+      image:"https://www.mountainlakemn.com/files/8115/3747/8769/Island_View_Campground.jpg",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam laudantium obcaecati tenetur beatae eius eligendi, est dolorem libero facilis modi nostrum quam debitis at, sint doloremque maxime fugiat voluptates vero.",
-      price: random1000*1000,
+      price: random1000 * 1000,
     });
     await camp.save();
   }
