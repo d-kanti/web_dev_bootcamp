@@ -33,11 +33,10 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 
-app.get("/camp", async (req, res) => {
-  const camp = new Campground({ title: "two camp", description: "one or two" });
-  await camp.save();
-  res.send(camp);
-});
+app.get('/campgrounds',async () =>{
+  const camps = await Campground.find({})
+  res.render('campgrounds/index')
+})
 
 app.listen(3000, () => {
   console.log("\n\n\napp listning on the port 3000....");
