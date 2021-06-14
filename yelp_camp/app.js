@@ -24,16 +24,16 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 
-app.get("/campgrounds", async (req,res) => {
+app.get("/campgrounds", async (req, res) => {
   const camps = await Campground.find({});
   res.render("campgrounds/index", { camps });
 });
 
-app.get("/campgrounds/:id", async (req,res)=>{
-  const {id } = req.params
-  const camp = Campground.findById(id);
-  res.render('campgrounds/show')
-})
+app.get("/campgrounds/:id", async (req, res) => {
+  const { id } = req.params;
+  const camp = await Campground.findById(id);
+  res.render("campgrounds/show", { camp });
+});
 
 app.listen(3000, () => {
   console.log("\n\n\napp listning on the port 3000....");
