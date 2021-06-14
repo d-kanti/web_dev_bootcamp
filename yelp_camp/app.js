@@ -9,9 +9,6 @@ const { title } = require("process");
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-
-
-
 mongoose.connect("mongodb://localhost:27017/yelp-camp", {
   useNewUrlParser: true,
   useCreateIndex: true,
@@ -23,20 +20,14 @@ db.once("open", () => {
   console.log("database connected....");
 });
 
-
-
-
-
-
-
 app.get("/", (req, res) => {
   res.render("home");
 });
 
-app.get('/campgrounds',async () =>{
-  const camps = await Campground.find({})
-  res.render('campgrounds/index')
-})
+app.get("/campgrounds", async (req,res) => {
+  const camps = await Campground.find({});
+  res.render("campgrounds/index", { camps });
+});
 
 app.listen(3000, () => {
   console.log("\n\n\napp listning on the port 3000....");
