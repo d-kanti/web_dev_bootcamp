@@ -7,3 +7,12 @@
     <form action="/campgrounds/<%= camp._id %>?_method=DELETE" method="POST">
       <button>DELETE !</button>
     </form>
+
+    <script>
+
+      document.getElementById("editl").classList.add("active");
+      document.getElementById("editl").classList.remove("disabled");
+      let ii = "<%= camp._id%>";
+      document.getElementById("editl").href = `/campgrounds/${ii}/edit`;
+      
+    </script>
