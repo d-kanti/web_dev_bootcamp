@@ -9,6 +9,8 @@ const { title } = require("process");
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
+app.use(express.urlencoded({ extended: true }));
+
 mongoose.connect("mongodb://localhost:27017/yelp-camp", {
   useNewUrlParser: true,
   useCreateIndex: true,
@@ -39,6 +41,11 @@ app.get("/campgrounds/:id", async (req, res) => {
   res.render("campgrounds/show", { camp });
 });
 
+app.post("/campgrounds", async (req, res) => {
+  const camp = new Campground(req.body.campground);
+  await camp.save();
+  res.redirect(`campgrounds/${camp._id}`);
+});
 
 app.listen(3000, () => {
   console.log("\n\n\napp listning on the port 3000....");
