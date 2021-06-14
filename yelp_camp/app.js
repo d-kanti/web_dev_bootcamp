@@ -4,11 +4,12 @@ const path = require("path");
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const morgan = require("morgan");
-
+const mate = require("ejs-mate");
 
 const Campground = require("./models/campground");
 const { title } = require("process");
 
+app.engine("ejs", mate);
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
