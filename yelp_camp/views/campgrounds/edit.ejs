@@ -1,25 +1,68 @@
-<% layout("layouts/boilerplate") %> 
+<% layout("layouts/boilerplate") %>
 
-    <h1>Edit Campground</h1>
-
+<div class="row">
+  <h1 class="text-center">New Campground</h1>
+  <div class="col-6 offset-3">
     <form action="/campgrounds/<%= camp._id %>?_method=PUT" method="POST">
-      <div> <!-- title -->
-        <label for="title">Title</label>
+      <div class="mb-4">
+        <label class="form-label" for="title">Title</label>
         <input
+          class="form-control"
           type="text"
           id="title"
           name="campground[title]"
-          value="<%=camp.title %> "
+          value="<%= camp.title  %> "
         />
       </div>
-      <div> <!-- location -->
-        <label for="location">Location</label>
+
+      <div class="mb-4">
+        <label class="form-label" for="image">Image URL</label>
         <input
+          class="form-control"
           type="text"
-          id="location"
-          name="campground[location]"
-          value="<%= camp.location %> "
+          id="image"
+          name="campground[image]"
+          value="<%= camp.image %> "
         />
       </div>
-      <button>Update</button>
+
+      <div class="row">
+        <div class="mb-4 col-md-8">
+          <label class="form-label" for="location">Location</label>
+          <input
+            class="form-control"
+            type="text"
+            id="location"
+            name="campground[location]"
+            value="<%= camp.location %> "
+          />
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <label class="form-label" for="price">Price</label>
+
+          <input
+            type="number"
+            class="form-control"
+            id="price"
+            placeholder="0.00"
+            name="campground[price]"
+            value="<%= camp.price %>"
+          />
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <label class="form-label" for="description">Description</label>
+        <textarea
+          class="form-control"
+          type="text"
+          id="description"
+          name="campground[description]"
+        ><%= camp.description %> </textarea>
+      </div>
+
+      <button class="btn btn-info col-lg-2 offset-5">Update</button>
     </form>
+  </div>
+</div>
